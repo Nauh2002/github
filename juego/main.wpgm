@@ -1,0 +1,8 @@
+import wollok.game.*
+import intro.*
+
+program mingoGame {
+	primeraPantalla.inicio()
+	game.start()
+}
+
