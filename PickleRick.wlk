@@ -13,6 +13,8 @@ object rick {
 
   const property objetos = [] // Lista de objetos agarrados
 
+  const property lasers = []
+
   var property vida = 100 // vida inicial de rick
   
   method poder() {
@@ -53,7 +55,7 @@ object rick {
   }
 
   method arriba() {
-    if(self.position().y() < (game.height() - 1)){
+    if(self.position().y() < (game.height() - 2)){
       pasos.play()
       imageRick = "rickespalda2.png"
       posicion = posicion.up(0.5)
@@ -74,7 +76,8 @@ object rick {
 
   method esPortal(objeto){
     if (objeto.className() == "Objetos.Portales"){
-      objeto.mapa()
+      //objeto.mapa()
+      mapaRandom.elegirMapa()
     } else {self.agarrar(objeto)}
   }
   
