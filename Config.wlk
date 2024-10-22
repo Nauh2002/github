@@ -33,6 +33,8 @@ object config{
     keyboard.i().onPressDo({ self.textoCharlado(0000, 4000, inventario)})
 
     keyboard.f().onPressDo({ self.disparar()}) //Si no tiene arma no dispara
+
+
     
   }
 

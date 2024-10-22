@@ -36,30 +36,34 @@ object mapaRandom {
   method elegirMapa (){
 
     if (listaNiveles.size() == 0) {
+      mapaTransicion.play()
       game.addVisual(transicion)
       transicion.titila()
-      game.schedule(300, {niveles.nivel5()})
+      game.schedule(800, {niveles.nivel5()})
     }
 
     var nivelElegido = listaNiveles.anyOne()
 
     if (nivelElegido == 2) {
+      mapaTransicion.play()
       game.addVisual(transicion)
       listaNiveles.remove(nivelElegido)
       transicion.titila()
-      game.schedule(300,{niveles.nivel2()})
+      game.schedule(800,{niveles.nivel2()})
     }
     else if (nivelElegido == 3) {
+      mapaTransicion.play()
       game.addVisual(transicion)
       listaNiveles.remove(nivelElegido)
       transicion.titila()
-      game.schedule(300,{niveles.nivel3()})
+      game.schedule(800,{niveles.nivel3()})
     }
     else if (nivelElegido == 4) {
+      mapaTransicion.play()
       game.addVisual(transicion)
       listaNiveles.remove(nivelElegido)
       transicion.titila()
-      game.schedule(300,{niveles.nivel4()})
+      game.schedule(800,{niveles.nivel4()})
     }
   }
   

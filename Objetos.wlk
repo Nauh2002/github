@@ -205,5 +205,13 @@ object ruidoAparicion {
   method play(){
     game.sound("ruidito.mp3").play()
   }
+}
 
+object mapaTransicion {
+
+  method play() {
+    game.sound("mapaTransicion3.mp3").play()
+    
+  }
+  
 }

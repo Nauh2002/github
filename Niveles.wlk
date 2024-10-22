@@ -11,7 +11,7 @@ import Mapas.*
 object niveles {
   const ancho = 12 //se mide en celdas de 50 x 50px
   const alto = 12  //se mide en celdas de 50 x 50px
-
+  
   method nivel1() {
       game.clear()
       config.configurarTeclasRick()

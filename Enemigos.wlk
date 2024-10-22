@@ -74,6 +74,7 @@ class Ratas  inherits Personajes (vida = 20, poder = 5) {
   }
 
   method crearRata() {
+    ruidoAparicion.play()
     self.crearId()
     game.onTick(800, "perseguir" + id.toString(), {self.perseguir()})
   }
