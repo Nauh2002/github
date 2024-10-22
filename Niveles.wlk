@@ -11,6 +11,15 @@ import Mapas.*
 object niveles {
   const ancho = 12 //se mide en celdas de 50 x 50px
   const alto = 12  //se mide en celdas de 50 x 50px
+  const fondo = game.sound("fondo.mp3")
+
+  method sonidoFondo() {
+    fondo.shouldLoop(true)
+    keyboard.down().onPressDo({ fondo.volume(0) }) 
+    keyboard.up().onPressDo({fondo.volume(1)})
+    fondo.play()
+    
+  }
   
   method nivel1() {
       game.clear()
@@ -35,6 +44,7 @@ object niveles {
       config.crearRata()
 
       game.addVisual(rick)
+      self.sonidoFondo()
 
   }
 
@@ -57,6 +67,7 @@ object niveles {
       config.crearRata()
 
       game.addVisual(rick)
+      self.sonidoFondo()
 
   }
 
@@ -78,6 +89,7 @@ object niveles {
       
       config.crearRata()
       game.addVisual(rick)
+      self.sonidoFondo()
   }
   method nivel4() {
       game.clear()
@@ -95,6 +107,7 @@ object niveles {
       
       config.crearRata()
       game.addVisual(rick)
+      self.sonidoFondo()
 
   }
 
@@ -111,6 +124,7 @@ object niveles {
       
       config.crearRata()
       game.addVisual(rick)
+      self.sonidoFondo()
   }
 
 

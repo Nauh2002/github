@@ -40,10 +40,10 @@ object primeraPantalla {
 	  game.width(ancho)  
     game.addVisual(fondoInicio)
     game.addVisual(mensajeInicio)
-    fondo.shouldLoop(true)
-    keyboard.p().onPressDo({ fondo.volume(0) }) 
-    keyboard.o().onPressDo({fondo.volume(1)})
-    fondo.play()
+    //fondo.shouldLoop(true)
+    //keyboard.down().onPressDo({ fondo.volume(0) }) 
+    //keyboard.up().onPressDo({fondo.volume(1)})
+    //fondo.play()
 //////////
     keyboard.e().onPressDo({ self.corroboro() })
   
@@ -59,6 +59,7 @@ object primeraPantalla {
       self.deshabilitador()
       //niveles.habilitador()
       niveles.nivel1() 
+      niveles.sonidoFondo()
     }
   }
 

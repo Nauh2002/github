@@ -32,6 +32,16 @@ const mapa4 = new Mapas (imagen = "fondoPiedra.jpg") //LA FINAL
 //Selecciona un mapa random a menos que tenga los 4 objetos y va a la final
 object mapaRandom {
   const listaNiveles = [2,3,4]
+
+  const fondo = game.sound("fondo.mp3")
+
+  method sonidoFondo() {
+    fondo.shouldLoop(true)
+    keyboard.down().onPressDo({ fondo.volume(0) }) 
+    keyboard.up().onPressDo({fondo.volume(1)})
+    fondo.play()
+    
+  }
   
   method elegirMapa (){
 
@@ -40,6 +50,7 @@ object mapaRandom {
       game.addVisual(transicion)
       transicion.titila()
       game.schedule(800, {niveles.nivel5()})
+      
     }
 
     var nivelElegido = listaNiveles.anyOne()
@@ -50,6 +61,7 @@ object mapaRandom {
       listaNiveles.remove(nivelElegido)
       transicion.titila()
       game.schedule(800,{niveles.nivel2()})
+      
     }
     else if (nivelElegido == 3) {
       mapaTransicion.play()
@@ -57,6 +69,7 @@ object mapaRandom {
       listaNiveles.remove(nivelElegido)
       transicion.titila()
       game.schedule(800,{niveles.nivel3()})
+      
     }
     else if (nivelElegido == 4) {
       mapaTransicion.play()
@@ -64,6 +77,7 @@ object mapaRandom {
       listaNiveles.remove(nivelElegido)
       transicion.titila()
       game.schedule(800,{niveles.nivel4()})
+      
     }
   }
   
