@@ -124,7 +124,7 @@ class Ratas  inherits Personajes (vida = 20, poder = 1) {
   method kill(){
       //game.removeVisual(self)
       //game.removeTickEvent("perseguir" + self.identity())
-      //niveles.winner()
+      niveles.winner()
       sonido.play("muerteRatas.mp3")
       //muerteRatas.play()
       posicion = game.at((-1.randomUpTo(14)).randomUpTo(14).truncate(0),(-1.randomUpTo(14)).randomUpTo(14).truncate(0))

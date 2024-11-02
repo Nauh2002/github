@@ -141,6 +141,7 @@ object niveles {
       fondo.stop()
       game.clear()
       game.addVisual(gameOver)
+      sonido.play("gameover.mp3")
       keyboard.r().onPressDo({primeraPantalla.inicio()})
       primeraPantalla.habilitador()
       rick.reiniciarVida()
@@ -152,10 +153,12 @@ object niveles {
       fondo.stop()
       game.clear()
       game.addVisual(winner)
+      sonido.play("winner.mp3")
       keyboard.r().onPressDo({primeraPantalla.inicio()})
       primeraPantalla.habilitador()
       rick.reiniciarVida()
       rick.reiniciarPosicion()
+      rick.soltarObjetos()
     }
 
 }
