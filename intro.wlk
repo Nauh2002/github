@@ -21,29 +21,26 @@ object fondoInicio {
 object primeraPantalla {
   const ancho = 12 //se mide en celdas de 50 x 50px
   const alto = 12   //se mide en celdas de 50 x 50px
-  
 //////////
   var property habilitado = true
 
-  const fondo = game.sound("fondo.mp3")
+  method habilitador(){
+    habilitado = true
+  }
 
   method deshabilitador(){
     habilitado = false
-  }
+  }  
 //////////  
   method inicio() {
     game.clear()
     //config.removerVisuales()
-
+    
     game.title("Pickle Rick")
 	  game.height(alto) 
 	  game.width(ancho)  
     game.addVisual(fondoInicio)
     game.addVisual(mensajeInicio)
-    //fondo.shouldLoop(true)
-    //keyboard.down().onPressDo({ fondo.volume(0) }) 
-    //keyboard.up().onPressDo({fondo.volume(1)})
-    //fondo.play()
 //////////
     keyboard.e().onPressDo({ self.corroboro() })
   
@@ -55,13 +52,10 @@ object primeraPantalla {
     if (habilitado){
       game.removeVisual(mensajeInicio)
       game.removeVisual(fondoInicio)
-
       self.deshabilitador()
       //niveles.habilitador()
       niveles.nivel1() 
-      niveles.sonidoFondo()
     }
   }
-
 //////////
 }

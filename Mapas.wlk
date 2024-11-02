@@ -33,51 +33,37 @@ const mapa4 = new Mapas (imagen = "fondoPiedra.jpg") //LA FINAL
 object mapaRandom {
   const listaNiveles = [2,3,4]
 
-  const fondo = game.sound("fondo.mp3")
-
-  method sonidoFondo() {
-    fondo.shouldLoop(true)
-    keyboard.down().onPressDo({ fondo.volume(0) }) 
-    keyboard.up().onPressDo({fondo.volume(1)})
-    fondo.play()
-    
-  }
-  
   method elegirMapa (){
 
     if (listaNiveles.size() == 0) {
-      mapaTransicion.play()
+      sonido.play("mapaTransicion3.mp3")
       game.addVisual(transicion)
       transicion.titila()
       game.schedule(800, {niveles.nivel5()})
-      
     }
 
     var nivelElegido = listaNiveles.anyOne()
 
     if (nivelElegido == 2) {
-      mapaTransicion.play()
+      sonido.play("mapaTransicion3.mp3")
       game.addVisual(transicion)
       listaNiveles.remove(nivelElegido)
       transicion.titila()
       game.schedule(800,{niveles.nivel2()})
-      
     }
     else if (nivelElegido == 3) {
-      mapaTransicion.play()
+      sonido.play("mapaTransicion3.mp3")
       game.addVisual(transicion)
       listaNiveles.remove(nivelElegido)
       transicion.titila()
       game.schedule(800,{niveles.nivel3()})
-      
     }
     else if (nivelElegido == 4) {
-      mapaTransicion.play()
+      sonido.play("mapaTransicion3.mp3")
       game.addVisual(transicion)
       listaNiveles.remove(nivelElegido)
       transicion.titila()
       game.schedule(800,{niveles.nivel4()})
-      
     }
   }
   

@@ -13,14 +13,14 @@ object niveles {
   const alto = 12  //se mide en celdas de 50 x 50px
   const fondo = game.sound("fondo.mp3")
 
-  method sonidoFondo() {
-    fondo.shouldLoop(true)
-    keyboard.down().onPressDo({ fondo.volume(0) }) 
-    keyboard.up().onPressDo({fondo.volume(1)})
-    fondo.play()
-    
-  }
+    method sonidoFondo() {
+      fondo.shouldLoop(true)
+      keyboard.down().onPressDo({ fondo.volume(0) }) 
+      keyboard.up().onPressDo({fondo.volume(1)})
+      fondo.play()
+    }
   
+
   method nivel1() {
       game.clear()
       config.configurarTeclasRick()
@@ -44,9 +44,11 @@ object niveles {
       config.crearRata()
 
       game.addVisual(rick)
-      self.sonidoFondo()
+      game.addVisual(vidaRick)
 
-  }
+      self.sonidoFondo()
+      
+    }
 
   method nivel2() {
       game.clear()
@@ -67,9 +69,11 @@ object niveles {
       config.crearRata()
 
       game.addVisual(rick)
+
+      config.textoCharlado(3000, 6000, saludo2)//Pruebas
       self.sonidoFondo()
 
-  }
+    }
 
   method nivel3() {
       game.clear()
@@ -89,8 +93,11 @@ object niveles {
       
       config.crearRata()
       game.addVisual(rick)
+      config.textoCharlado(3000, 6000, saludo2)//Pruebas
       self.sonidoFondo()
-  }
+
+    }
+
   method nivel4() {
       game.clear()
       config.configurarTeclasRick()
@@ -107,9 +114,10 @@ object niveles {
       
       config.crearRata()
       game.addVisual(rick)
+      config.textoCharlado(3000, 6000, saludo2) //Pruebas
       self.sonidoFondo()
 
-  }
+    }
 
   method nivel5() {
       game.clear()
@@ -124,9 +132,43 @@ object niveles {
       
       config.crearRata()
       game.addVisual(rick)
+      config.textoCharlado(3000, 6000, saludo2) //Pruebas
       self.sonidoFondo()
-  }
+    }
 
 
+    method gameOver(){
+      fondo.stop()
+      game.clear()
+      game.addVisual(gameOver)
+      keyboard.r().onPressDo({primeraPantalla.inicio()})
+      primeraPantalla.habilitador()
+      rick.reiniciarVida()
+      rick.reiniciarPosicion()
+      rick.soltarObjetos()
+    }
+
+    method winner(){
+      fondo.stop()
+      game.clear()
+      game.addVisual(winner)
+      keyboard.r().onPressDo({primeraPantalla.inicio()})
+      primeraPantalla.habilitador()
+      rick.reiniciarVida()
+      rick.reiniciarPosicion()
+    }
 
 }
+
+object gameOver {
+    method position() = game.origin()
+    method image() = "GameOver2.jpg"
+  
+}
+
+object winner {
+    method position() = game.origin()
+    method image() = "Winner2.jpg"
+}
+
+
